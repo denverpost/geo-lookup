@@ -17,6 +17,8 @@ To get the unique values of a particular column (assuming you have csvkit instal
 
 An unclean list of distinct special districts used in elections between 2008 and 2017: http://data.denverpost.com/election/results/district/
 
+U.S. Census Bureau's list of geographic boundaries https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html
+
 ## Sources
 
 * Counties (created 2015, not sure when the boundaries are current as of) http://catalog.civicdashboards.com/dataset/colorado-counties-polygon/resource/c9ddc844-6d01-4c7c-8c98-df932ea94597
