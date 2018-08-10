@@ -40,7 +40,6 @@ Elk Creek Fire Protection District
 Elk Creek Fire Protection Special District
 Englewood School District
 Estes Park School District R-3
-Estes Valley Recreation and Park Dist
 Estes Valley Recreation and Park District
 Evergreen Metropolitan Special District
 Evergreen Parks and Recreation Special District
@@ -49,13 +48,11 @@ Green Mountain Water and Sanitation Special District
 Heritage Greens Metropolitan District
 Indian Hills Fire Protection District
 Jefferson County Public Library
-Jefferson County School Distrcit R-1
 Jefferson County School District
 Jefferson County School District R-1
 Ken-Caryl Ranch Water and Sanitation Special District
 Kittredge Sanitation and Water Special District
 Larkspur Fire Protection District
-Littleton Public Schools
 Littleton Public Schools District
 Lyons Ridge Metropolitan Metropolitan District
 Mapleton Public Schools
@@ -88,7 +85,6 @@ Weld County School District 6
 Weld County School District RE-3J
 Weld County School District RE-8
 Weld RE-10J Briggsdale Schools
-Weld RE-3(J) School District
 Weld-Larimer County Schools RE-5J
 West Jefferson County Metropolitan Special District
 Westminster Public Schools
