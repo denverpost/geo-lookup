@@ -18,4 +18,5 @@ To get the unique values of a particular column (assuming you have csvkit instal
 ## Sources
 
 * Counties (2015) http://catalog.civicdashboards.com/dataset/colorado-counties-polygon/resource/c9ddc844-6d01-4c7c-8c98-df932ea94597
+* Cities (2015) http://catalog.civicdashboards.com/dataset/colorado-cities-polygon/resource/688ac390-6809-42e0-989d-58666074468c
 
