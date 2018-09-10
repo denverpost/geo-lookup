@@ -15,18 +15,30 @@ We use http://mapshaper.org/ to simplify geojson files.
 
 The boundaries list lives in index.html and is handed off to the app.js on init();.
 
+#### config.b
+
 It's an object that looks something like this:
 
 ```js
 	b: {
-        'congressional-districts': { name: 'Congressional district', id: 'CongDist' },
         'us-house-colorado': { name: 'Congressional district', id: 'CongDist' },
+        'state-senate': { name: 'State senate', id: 'district' },
     },
 ```
 
 Each object key corresponds with a filename in the [json](json/) directory. 
 
 Each key's value is an object with two key-value pairs: One, `name`, that is the user-facing description of the boundary. The other, `id`, is...
+
+#### config.boundaries
+
+This object is an array of every `config.b` key that is live on the site.
+
+Using the above example, if you wanted both us-house-colorado and state-senate active, your boundaries key-value pair would look like:
+
+```js
+    boundaries: ['us-house-colorado', 'state-senate'],
+```
 
 ## Notes
 
