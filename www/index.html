@@ -55,9 +55,11 @@ var config = {
     center_point: [39,-105],
     default_zoom: 7,
     property: 'denverpost',
-	boundaries: [],
+    simple: 0,
+	boundaries: ['us-house-colorado', 'state-senate'],
 	b: {
-        'congressional-districts': { name: 'Congressional district', id: 'CongDist' },
+        'us-house-colorado': { name: 'U.S. House', id: 'namelsad' },
+        'state-senate': { name: 'State senate district', id: 'district' },
     },
 };
 

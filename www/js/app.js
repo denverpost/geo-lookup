@@ -56,9 +56,9 @@ var lookup = {
             console.log(k[i]);
             var key = k[i].replace('json/' + lookup.config.property + '/simple/', '').replace('.json', '');
             var li = document.createElement('li');
-            // “result[k[i]][lookup.config.b[key]['id']]” might be the most ridiculous array key gather operation I've done.
             var loc_type = lookup.config.b[key]['name'];
             var loc = 'Not available';
+            // “result[k[i]][lookup.config.b[key]['id']]” might be the most ridiculous array key gather operation I've done.
             if ( result[k[i]] !== null ) loc = result[k[i]][lookup.config.b[key]['id']];
             li.textContent = loc_type + ': ' + loc;
             lookup.ul.appendChild(li);
