@@ -89,6 +89,7 @@ var lookup = {
 var m = {
     config: {
         center_point: [],
+        default_zoom: 10,
     },
     update_config: function(config) {
         // Take an external config object and update this config object.
@@ -101,7 +102,7 @@ var m = {
         }
         return true;
     },
-    map: L.map('locator-map', { minZoom: 9, zoomControl:true, scrollWheelZoom:false }).setView(this.config.center_point, 10),
+    map: L.map('locator-map', { minZoom: 6, zoomControl:true, scrollWheelZoom:false }).setView(this.config.center_point, this.config.default_zoom),
     markers: [],
     tile: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
