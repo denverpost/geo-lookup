@@ -11,6 +11,23 @@ From the www directory, create a symbolic link to the json dir, ala `ln -s ../js
 
 We use http://mapshaper.org/ to simplify geojson files.
 
+### Configuring the boundaries list
+
+The boundaries list lives in index.html and is handed off to the app.js on init();.
+
+It's an object that looks something like this:
+
+```js
+	b: {
+        'congressional-districts': { name: 'Congressional district', id: 'CongDist' },
+        'us-house-colorado': { name: 'Congressional district', id: 'CongDist' },
+    },
+```
+
+Each object key corresponds with a filename in the [json](json/) directory. 
+
+Each key's value is an object with two key-value pairs: One, `name`, that is the user-facing description of the boundary. The other, `id`, is...
+
 ## Notes
 
 To get the unique values of a particular column (assuming you have csvkit installed): `csvcut -c PRE_DIRECT Address_Point.csv | sort -u`
