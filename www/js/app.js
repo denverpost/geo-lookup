@@ -48,20 +48,36 @@ var lookup = {
         var result = lookup.wolfy.find({lat: lat, lng: lng});
         lookup.add_marker(lat, lng, 'location', 'hiiii');
         lookup.result = result;
-        var k = Object.keys(result);
+        
         // Write the results to the page.
         // Include an option to map them.
         // To map them we'll need to go back to the lookup.wolfy object to get the boundaries.
+        var k = Object.keys(result);
         for ( var i = 0; i < k.length; i ++ ) {
+            // PLACE NAMES: This part of the loop gets and writes the place names
             console.log(k[i]);
             var key = k[i].replace('json/' + lookup.config.property + '/simple/', '').replace('.json', '');
             var li = document.createElement('li');
             var loc_type = lookup.config.b[key]['name'];
+            // “result[k[i]][lookup.config.b[key]['id']]” is an intense array key collation operation
+            var id_field_name = lookup.config.b[key]['id'];
+
             var loc = 'Not available';
-            // “result[k[i]][lookup.config.b[key]['id']]” might be the most ridiculous array key gather operation I've done.
-            if ( result[k[i]] !== null ) loc = result[k[i]][lookup.config.b[key]['id']];
+            if ( result[k[i]] !== null ) loc = result[k[i]][id_field_name];
             li.textContent = loc_type + ': ' + loc;
             lookup.ul.appendChild(li);
+            
+            // PLACE BOUNDARIES: This part of the loop gets the place boundaries 
+            var boundaries = lookup.wolfy.layers[k[i]];
+            var len = boundaries.length;
+            for ( var j = 0; j < len; j ++ ) {
+                // If the id value matches the location (var named loc)
+                // we established earlier, we have a match.
+                if ( boundaries[j]['properties'][id_field_name] == loc ) {
+                    var geo = boundaries[j]['geometry'];
+                    console.log('***' + loc);
+                }
+            }
         }
     },
     init_autocomplete: function() {
