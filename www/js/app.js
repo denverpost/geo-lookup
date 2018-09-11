@@ -74,7 +74,7 @@ var lookup = {
                 // If the id value matches the location (var named loc)
                 // we established earlier, we have a match.
                 if ( boundaries[j]['properties'][id_field_name] == loc ) {
-                    var geo = boundaries[j]['geometry'];
+                    L.geoJSON(boundaries[j]).addTo(m.map);
                     console.log('***' + loc);
                 }
             }
@@ -122,12 +122,15 @@ var m = {
     markers: [],
     tile: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
-    add_marker: function (lat, lon, id, title, desc)
+    add_marker: function(lat, lon, id, title, desc)
     {
         var marker = L.marker(new L.LatLng(lat, lon)).addTo(this.map);
         var content = "<h3><a href='#" + id + "'>" + title + "</a></h3><p>" + desc + "</p>";
         marker.bindPopup(content);
         this.markers.push(marker);
+    },
+    add_boundary: function(geometry, slug) {
+        // Given a geometry object, create a layer and add that boundary to the layer.
     },
     slugify: function(text) {
         return text
