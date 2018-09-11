@@ -61,10 +61,12 @@ var lookup = {
             var loc_type = lookup.config.b[key]['name'];
             // “result[k[i]][lookup.config.b[key]['id']]” is an intense array key collation operation
             var id_field_name = lookup.config.b[key]['id'];
+            var color = lookup.border_colors[i];
 
             var loc = 'Not available';
             if ( result[k[i]] !== null ) loc = result[k[i]][id_field_name];
             li.textContent = loc_type + ': ' + loc;
+            li.setAttribute('style', 'border-bottom: 2px solid ' + color + ';');
             lookup.ul.appendChild(li);
             
             // PLACE BOUNDARIES: This part of the loop gets the place boundaries 
@@ -76,11 +78,11 @@ var lookup = {
                 // If the id value matches the location (var named loc)
                 // we established earlier, we have a match.
                 if ( boundaries[j]['properties'][id_field_name] == loc ) {
-                    m.boundaries.addData(boundaries[j]);
+                    m.boundaries.addData(boundaries[j]).setStyle({ fillColor: color });
                 }
             }
         }
-        // Zoom to the outer borders
+        // Zoom to the outer borders **TODO make the getBounds() work the way it should
         m.map.fitBounds(m.boundaries.getBounds());
         m.map.setZoom(m.map.getZoom() - 3);
     },
@@ -94,6 +96,16 @@ var lookup = {
 		// fields in the form.
 		this.autocomplete.addListener('place_changed', lookup.show_results);
     },
+    border_colors: [
+        '#FFBE00',
+        '#555500',
+        '#252126',
+        '#2C2E87',
+        '#773D00',
+        '#306A00',
+        '#6A0020',
+        '#01384A'
+    ],
 	init: function(config) {
         if ( config !== null ) this.update_config(config);
 
