@@ -70,15 +70,19 @@ var lookup = {
             // PLACE BOUNDARIES: This part of the loop gets the place boundaries 
             var boundaries = lookup.wolfy.layers[k[i]];
             var len = boundaries.length;
+            m.boundaries = L.geoJSON().addTo(m.map);
+
             for ( var j = 0; j < len; j ++ ) {
                 // If the id value matches the location (var named loc)
                 // we established earlier, we have a match.
                 if ( boundaries[j]['properties'][id_field_name] == loc ) {
-                    L.geoJSON(boundaries[j]).addTo(m.map);
-                    console.log('***' + loc);
+                    m.boundaries.addData(boundaries[j]);
                 }
             }
         }
+        // Zoom to the outer borders
+        m.map.fitBounds(m.boundaries.getBounds());
+        m.map.setZoom(m.map.getZoom() - 3);
     },
     init_autocomplete: function() {
 		// Create the autocomplete object, restricting the search to geographical location types.
