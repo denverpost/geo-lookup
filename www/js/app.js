@@ -2,7 +2,24 @@
 // GEO LOOKUP-TO-ARTICLE LINK & TEXT MANAGER OBJECT
 // This lets us, once we get the results for a lookup,
 // append linked text items below each matching boundary.
-var link_lookup = {};
+var link_lookup = {
+    config: {
+    },
+    update_config: function(config) {
+        // Take an external config object and update this config object.
+        for ( var key in config )
+        {
+            if ( config.hasOwnProperty(key) )
+            {
+                this.config[key] = config[key];
+            }
+        }
+        return true;
+    },
+	init: function(config) {
+        if ( config !== null ) this.update_config(config);
+    }
+};
 
 // GEO LAT/LONG LOOKUP OBJECT
 var inbox = {};
