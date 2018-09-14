@@ -1,4 +1,9 @@
 // LET'S DO THIS
+// GEO LOOKUP-TO-ARTICLE LINK & TEXT MANAGER OBJECT
+// This lets us, once we get the results for a lookup,
+// append linked text items below each matching boundary.
+var link_lookup = {};
+
 // GEO LAT/LONG LOOKUP OBJECT
 var inbox = {};
 var lookup = {
@@ -119,7 +124,7 @@ var lookup = {
 	}
 };
 
-// MAP OBJECT
+// LEAFLET MAP OBJECT
 var m = {
     config: {
         center_point: [],
