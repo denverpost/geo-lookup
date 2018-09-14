@@ -53,6 +53,7 @@ var lookup = {
         // Include an option to map them.
         // To map them we'll need to go back to the lookup.wolfy object to get the boundaries.
         var k = Object.keys(result);
+        m.boundaries = {};
         for ( var i = 0; i < k.length; i ++ ) {
             // PLACE NAMES: This part of the loop gets and writes the place names
             console.log(k[i]);
@@ -66,25 +67,26 @@ var lookup = {
             var loc = 'Not available';
             if ( result[k[i]] !== null ) loc = result[k[i]][id_field_name];
             li.textContent = loc_type + ': ' + loc;
-            li.setAttribute('style', 'border-bottom: 2px solid ' + color + ';');
+            li.setAttribute('style', 'color: ' + color + ';');
             lookup.ul.appendChild(li);
             
             // PLACE BOUNDARIES: This part of the loop gets the place boundaries 
             var boundaries = lookup.wolfy.layers[k[i]];
             var len = boundaries.length;
-            m.boundaries = L.geoJSON().addTo(m.map);
 
+            m.boundaries[key] = L.geoJSON().addTo(m.map);
             for ( var j = 0; j < len; j ++ ) {
                 // If the id value matches the location (var named loc)
                 // we established earlier, we have a match.
                 if ( boundaries[j]['properties'][id_field_name] == loc ) {
-                    m.boundaries.addData(boundaries[j]).setStyle({ fillColor: color });
+                    console.log(boundaries[j]);
+                    m.boundaries[key].addData(boundaries[j]).setStyle({ fillColor: color, color: color });
                 }
             }
         }
-        // Zoom to the outer borders **TODO make the getBounds() work the way it should
-        m.map.fitBounds(m.boundaries.getBounds());
-        m.map.setZoom(m.map.getZoom() - 3);
+        // Zoom to the outer borders of the largest object **TODO **HARD-CODED
+        m.map.fitBounds(m.boundaries['us-house-colorado'].getBounds());
+        //m.map.setZoom(m.map.getZoom() - 3);
     },
     init_autocomplete: function() {
 		// Create the autocomplete object, restricting the search to geographical location types.
@@ -98,10 +100,10 @@ var lookup = {
     },
     border_colors: [
         '#FFBE00',
-        '#555500',
-        '#252126',
-        '#2C2E87',
-        '#773D00',
+        '#BEFF00',
+        '#00BEFF',
+        '#FF00BE',
+        '#BE00FF',
         '#306A00',
         '#6A0020',
         '#01384A'
