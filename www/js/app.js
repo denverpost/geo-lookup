@@ -280,4 +280,5 @@ var utils = {
 function init_app() {
     m.init(config);
 	lookup.init(config);
+	link_lookup.init(config);
 }
