@@ -276,3 +276,8 @@ var utils = {
         document.getElementsByTagName('head')[0].appendChild(s);
     },
 };
+
+function init_app() {
+    m.init(config);
+	lookup.init(config);
+}
