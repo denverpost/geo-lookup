@@ -119,8 +119,11 @@ var lookup = {
         lat = place.geometry.location.lat();
         lng = place.geometry.location.lng();
         var result = lookup.wolfy.find({lat: lat, lng: lng});
-        lookup.add_marker(lat, lng, 'location', 'hiiii');
+        lookup.add_marker(lat, lng, 'location', '');
         lookup.result = result;
+        // Make the results visible.
+        document.getElementById('results').classList.remove('hide');
+
         
         // Write the results to the page.
         // Include an option to map them.
@@ -128,7 +131,9 @@ var lookup = {
         var k = Object.keys(result);
         m.boundaries = {};
         for ( var i = 0; i < k.length; i ++ ) {
-            // PLACE NAMES: This part of the loop gets and writes the place names
+            // PLACE NAMES: This part of the loop gets and writes the place names to the page.
+            // The complicated part is the getting of the place name. A lot of the lift in this code
+            // is around communicating and organizing the geojson.
             console.log(k[i]);
             var key = k[i].replace(lookup.config.path + 'json/' + lookup.config.property + '/simple/', '').replace('.json', '');
             var li = document.createElement('li');
@@ -150,6 +155,7 @@ var lookup = {
                 var markup = linker.return_markup(key, loc_id);
                 if ( markup !== '' ) {
                     li = document.createElement('li');
+                    li.setAttribute('class', 'sublist');
                     li.innerHTML = markup;
                     lookup.ul.appendChild(li);
                 }
