@@ -1,13 +1,13 @@
 [
   {
     "location-type": "all",
-    "location-id": "",
+    "location-id": "all",
     "title": "Governor's race voter's guide",
     "url": "http://www.denverpost.com/"
   },
   {
     "location-type": "all",
-    "location-id": "",
+    "location-id": "all",
     "title": "Lt. Governor's race voter's guide",
     "url": "http://www.denverpost.com/"
   },
@@ -19,8 +19,8 @@
   },
   {
     "location-type": "state-senate",
-    "location-id": 39,
-    "title": "State Senate District 39 voter's guide",
+    "location-id": "all",
+    "title": "State Senate voter's guide",
     "url": "http://www.denverpost.com/"
   },
   {

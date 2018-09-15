@@ -8,13 +8,13 @@ We use http://mapshaper.org/ to simplify geojson files.
 
 ### How to set up a new lookup
 
-Basically: Copy an existing one and change some of the variables.
+Basically: Copy an existing lookup directory and edit the javascript `config` variable values. The config variables are described below.
 
 ### Configuring adding links to the results
 
 In the case of voter's guides, you'll want to provide links to the guides for the specific races in the matched jurisdictions. This is how you do that.
 
-1. Create a spreadsheet that looks like this below, with these four header rows: `location-type, location-id, title, url` [](screenshots/table-layout-screenshot.png)
+1. Create a spreadsheet that looks like this below, with these four header rows: `location-type, location-id, title, url` ![](screenshots/table-layout-screenshot.png)
     1. Values in location-type must correspond with the names of the geojson boundaries they match to: If you're adding a link that goes with, say, a US House candidate, and your US House geojson is named `us-house.json`, you'd put `us-house` in the spreadsheet.
     1. Values in location-id should correspond to the simplest part of the location name, lowercased. If you're adding a link that goes with U.S. House District 4, put "4" in the spreadsheet. If you're adding a link that goes with Teller County, put "teller" in the spreadsheet. If you're adding a link that goes with Crested Butte, put 'crested butte' in the spreadsheet.
     1. The value in the title will be the linked text, the value in url will be where the linked text clicks through to. If you leave url blank the text will not be linked. Links will be displayed in the order they appear in the spreadsheet.
@@ -38,6 +38,17 @@ var config = {
     linker_data: 'data/2018-general-election.json',
 };
 ```
+
+#### Making links show up no matter what.
+
+There's a magic word: "all"
+
+![](screenshots/magic-word.png)
+
+This is how it works:
+
+1. Putting "all" in the `location-type` field will add the link for all results.
+1. Putting "all" in the `location-id` field for a particurlar location-type will show that link for all results that have that particular location type. For example: With a location-type of state-senate and a location-if of all, that link will show with all lookups that have a state-senate result.
 
 ### Configuring the boundaries list
 

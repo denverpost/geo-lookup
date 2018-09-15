@@ -144,6 +144,7 @@ var lookup = {
 
             var loc = 'Not available';
             if ( result[k[i]] !== null ) loc = result[k[i]][id_field_name];
+            
             // Don't add location types that don't have any results.
             if ( loc === 'Not available' ) continue;
             li.textContent = loc_type + ': ' + loc;
