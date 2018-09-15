@@ -1,9 +1,4 @@
-# Boundaries
-
-
-## Colorado boundaries
-
-### Geocoding services
+# Geo Lookup
 
 ## Usage
 
