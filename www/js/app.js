@@ -40,18 +40,21 @@ var linker = {
         for ( var i = 0; i < l; i ++ ) {
             var r = linker.data[i];
             if ( !m.hasOwnProperty(r['location-type']) ) m[r['location-type']] = {};
-            if ( !m.[r['location-type']].hasOwnProperty(r['location-id']) ) m[r['location-type']][r['location-id']] = '';
+            else console.log('asdfs');
+            if ( !m[r['location-type']].hasOwnProperty(r['location-id']) ) m[r['location-type']][r['location-id']] = '';
 
             if ( r['url'] !== '' ) m[r['location-type']][r['location-id']] += '<li><a href="' + r['url'] + '">' + r['title'] + '</a></li>';
             else m[r['location-type']][r['location-id']] += '<li>' + r['title'] + '</li>';
         }
+        console.log('MARKUP: ', m);
         linker.markup = m;
     },
 	init: function(config) {
         if ( config !== null ) this.update_config(config);
 
-        if ( this.config.linker_data !== '' ) utils.get_json(this.config.linker_data, linker.data, linker.collate);
-        else utils.get_json('data/test.json', linker.data, linker.collate);
+        if ( this.config.linker_data !== '' ) utils.get_json(this.config.linker_data, linker, linker.collate);
+        else utils.get_json('data/test.json', linker, linker.collate);
+        linker.collate();
     }
 };
 
@@ -161,7 +164,7 @@ var lookup = {
             }
         }
         // Zoom to the outer borders of the largest object **TODO **HARD-CODED
-        m.map.fitBounds(m.boundaries['us-house-colorado'].getBounds());
+        m.map.fitBounds(m.boundaries['us-house'].getBounds());
         //m.map.setZoom(m.map.getZoom() - 3);
     },
     init_autocomplete: function() {
