@@ -30,6 +30,10 @@ var linker = {
         }
         return '';
     },
+    return_special_links: function(type) {
+        // A wrapper function that returns the links marked 'all' for a particular type of location.
+        return linker.return_markup(type, 'all');
+    },
     collate: function() {
         // Loop through the data array and build the markup for the links.
         // We put the markup in a nested object that is, at the end here, assigned to linker.markup.
@@ -125,9 +129,14 @@ var lookup = {
         document.getElementById('results').classList.remove('hide');
 
         
-        // Write the results to the page.
-        // Include an option to map them.
+        // Write the results to the page: the list and the map.
         // To map them we'll need to go back to the lookup.wolfy object to get the boundaries.
+        //
+        // Note that there may be special links we add at the start (there may be special links deeper in too),
+        // we check for that here:
+        var markup = linker.return_special_links('all');
+        if ( markup !== '' ) lookup.ul.innerHTML = markup;
+
         var k = Object.keys(result);
         m.boundaries = {};
         for ( var i = 0; i < k.length; i ++ ) {
@@ -152,16 +161,16 @@ var lookup = {
             lookup.ul.appendChild(li);
             
             // Look if there are related links to add
-            if ( typeof linker !== 'undefined' ) {
-                // Make the loc value more machine-readable
-                var loc_id = loc.toString().replace(', CO', '').replace(' County', '').replace(' ', '-');
-                var markup = linker.return_markup(key, loc_id);
-                if ( markup !== '' ) {
-                    li = document.createElement('li');
-                    li.setAttribute('class', 'sublist');
-                    li.innerHTML = markup;
-                    lookup.ul.appendChild(li);
-                }
+            // Make the loc value more machine-readable
+            var loc_id = loc.toString().replace(', CO', '').replace(' County', '').replace(' ', '-');
+            // Look for any special, all-marked links.
+            var markup = linker.return_special_links(key);
+            markup += linker.return_markup(key, loc_id);
+            if ( markup !== '' ) {
+                li = document.createElement('li');
+                li.setAttribute('class', 'sublist');
+                li.innerHTML = markup;
+                lookup.ul.appendChild(li);
             }
             
             // PLACE BOUNDARIES: This part of the loop gets the place boundaries 
