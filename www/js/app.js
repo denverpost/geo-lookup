@@ -18,14 +18,32 @@ var linker = {
         return true;
     },
     data: {},
-    callback: function(path) {
-        console.log(path);
+    markup: {},
+    collate: function() {
+        // Loop through the data array and build the markup for the links.
+        // We put the markup in a nested object that is, at the end here, assigned to linker.markup.
+        //
+        // This is what one object we loop through might look like:
+        // {location-type: "state-house", location-id: 23, title: "State House District 23 voter's guide", url: "http://www.denverpost.com/"}
+        // And this is what that object would be turned into by this loop:
+        // { 'state-house': { '23': '<li><a href="http://www.denverpost.com/">State House District 23 voter's guide</a></li>' } }
+        var l = linker.data.length;
+        var m = {};
+        for ( var i = 0; i < l; i ++ ) {
+            var r = linker.data[i];
+            if ( !m.hasOwnProperty[r['location-type']] ) m[r['location-type']] = {};
+            if ( !m.hasOwnProperty[r['location-type']][r['location-id']] ) m[r['location-type']][r['location-id']] = '';
+
+            if ( r['url'] !== '' ) m[r['location-type']][r['location-id']] += '<li><a href="' + r['url'] + '">' + r['title'] + '</a></li>';
+            else m[r['location-type']][r['location-id']] += '<li>' + r['title'] + '</li>';
+        }
+        linker.markup = m;
     },
 	init: function(config) {
         if ( config !== null ) this.update_config(config);
 
-        if ( this.config.linker_data !== '' ) utils.get_json(this.config.linker_data, linker.data, linker.callback);
-        else utils.get_json('data/test.json', linker.data, linker.callback);
+        if ( this.config.linker_data !== '' ) utils.get_json(this.config.linker_data, linker.data, linker.collate);
+        else utils.get_json('data/test.json', linker.data, linker.collate);
     }
 };
 
