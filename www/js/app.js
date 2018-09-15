@@ -29,6 +29,16 @@ var lookup = {
         center_point: [],
         boundaries: [],
         b: {},
+        border_colors: [
+            '#FFBE00',
+            '#BEFF00',
+            '#00BEFF',
+            '#FF00BE',
+            '#BE00FF',
+            '#306A00',
+            '#6A0020',
+            '#01384A'
+        ],
     },
     update_config: function(config) {
         // Take an external config object and update this config object.
@@ -84,7 +94,7 @@ var lookup = {
             var loc_type = lookup.config.b[key]['name'];
             // “result[k[i]][lookup.config.b[key]['id']]” is an intense array key collation operation
             var id_field_name = lookup.config.b[key]['id'];
-            var color = lookup.border_colors[i];
+            var color = lookup.config.border_colors[i];
 
             var loc = 'Not available';
             if ( result[k[i]] !== null ) loc = result[k[i]][id_field_name];
@@ -120,16 +130,6 @@ var lookup = {
 		// fields in the form.
 		this.autocomplete.addListener('place_changed', lookup.show_results);
     },
-    border_colors: [
-        '#FFBE00',
-        '#BEFF00',
-        '#00BEFF',
-        '#FF00BE',
-        '#BE00FF',
-        '#306A00',
-        '#6A0020',
-        '#01384A'
-    ],
 	init: function(config) {
         if ( config !== null ) this.update_config(config);
 
