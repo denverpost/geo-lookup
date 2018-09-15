@@ -5,6 +5,7 @@
 var linker = {
     config: {
         linker_data: '',
+        path: '',
     },
     update_config: function(config) {
         // Take an external config object and update this config object.
@@ -54,8 +55,8 @@ var linker = {
 	init: function(config) {
         if ( config !== null ) this.update_config(config);
 
-        if ( this.config.linker_data !== '' ) utils.get_json(this.config.linker_data, linker, linker.collate);
-        else utils.get_json('data/test.json', linker, linker.collate);
+        if ( this.config.linker_data !== '' ) utils.get_json(this.config.path + this.config.linker_data, linker, linker.collate);
+        else utils.get_json(this.config.path + 'data/test.json', linker, linker.collate);
         linker.collate();
     }
 };
@@ -78,6 +79,7 @@ var lookup = {
             '#6A0020',
             '#01384A'
         ],
+        path: '',
     },
     update_config: function(config) {
         // Take an external config object and update this config object.
@@ -128,7 +130,7 @@ var lookup = {
         for ( var i = 0; i < k.length; i ++ ) {
             // PLACE NAMES: This part of the loop gets and writes the place names
             console.log(k[i]);
-            var key = k[i].replace('json/' + lookup.config.property + '/simple/', '').replace('.json', '');
+            var key = k[i].replace(lookup.config.path + 'json/' + lookup.config.property + '/simple/', '').replace('.json', '');
             var li = document.createElement('li');
             var loc_type = lookup.config.b[key]['name'];
             // “result[k[i]][lookup.config.b[key]['id']]” is an intense array key collation operation
@@ -187,7 +189,7 @@ var lookup = {
 		// Start downloading the boundary files
 		// get_json: function(path, obj, callback)
         for ( var i = 0; i < this.config.boundaries.length; i ++ ) {
-            utils.get_json('json/' + lookup.config.property + '/simple/' + this.config.boundaries[i] + '.json', inbox, lookup.wolf_callback);
+            utils.get_json(this.config.path + 'json/' + lookup.config.property + '/simple/' + this.config.boundaries[i] + '.json', inbox, lookup.wolf_callback);
         }
 	}
 };

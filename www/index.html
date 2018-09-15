@@ -37,7 +37,9 @@
 	<main>
 		<article>
 			<section id="location_field">
-				<h1>Look up an address or cross-street</h1>
+				<h1>Geo Lookup</h1>
+                <p>This is a fine place to test geo lookups.</p>
+				<h2>Look up an address or cross-street</h2>
 				<label for="location-autocomplete">Street Address</label>
 				<input placeholder="What's the address?" id="location-autocomplete" onFocus="lookup.geolocate()" type="text"></input>
 			</section>
@@ -65,7 +67,7 @@ var config = {
         'county': { name: 'County', id: 'name' },
         'rtd': { name: 'RTD district', id: 'DISTRICT' },
     },
-    linker_data: 'data/2018-general-election.json',
+    //linker_data: 'data/2018-general-election.json',
 };
 
 function init_autocomplete() {
