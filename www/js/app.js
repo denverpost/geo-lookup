@@ -47,7 +47,7 @@ var linker = {
             if ( !m.hasOwnProperty(type) ) m[type] = {};
             if ( !m[type].hasOwnProperty(id) ) m[type][id] = '';
 
-            if ( r['url'] !== '' ) m[type][id] += '<li><a href="' + r['url'] + '">' + r['title'] + '</a></li>';
+            if ( r['url'] !== '' ) m[type][id] += '<li><a href="' + r['url'] + '" target="_top">' + r['title'] + '</a></li>';
             else m[type][id] += '<li>' + r['title'] + '</li>';
         }
         linker.markup = m;
