@@ -23,6 +23,7 @@ var linker = {
         // Look in the markup object for a matching type & id,
         // if there's a match return the <li>'s wrapped in a <ul>.
         var m = linker.markup;
+        id = id.toLowerCase();
         if ( m.hasOwnProperty(type) && m[type].hasOwnProperty(id) ) {
             return '<ul>' + m[type][id] + '</ul>';
         }
@@ -39,14 +40,14 @@ var linker = {
         var m = {};
         for ( var i = 0; i < l; i ++ ) {
             var r = linker.data[i];
-            if ( !m.hasOwnProperty(r['location-type']) ) m[r['location-type']] = {};
-            else console.log('asdfs');
-            if ( !m[r['location-type']].hasOwnProperty(r['location-id']) ) m[r['location-type']][r['location-id']] = '';
+            var type = r['location-type'];
+            var id = r['location-id'].toString();
+            if ( !m.hasOwnProperty(type) ) m[type] = {};
+            if ( !m[type].hasOwnProperty(id) ) m[type][id] = '';
 
-            if ( r['url'] !== '' ) m[r['location-type']][r['location-id']] += '<li><a href="' + r['url'] + '">' + r['title'] + '</a></li>';
-            else m[r['location-type']][r['location-id']] += '<li>' + r['title'] + '</li>';
+            if ( r['url'] !== '' ) m[type][id] += '<li><a href="' + r['url'] + '">' + r['title'] + '</a></li>';
+            else m[type][id] += '<li>' + r['title'] + '</li>';
         }
-        console.log('MARKUP: ', m);
         linker.markup = m;
     },
 	init: function(config) {
@@ -141,7 +142,9 @@ var lookup = {
             
             // Look if there are related links to add
             if ( typeof linker !== 'undefined' ) {
-                var markup = linker.return_markup(loc_type, loc);
+                // Make the loc value more machine-readable
+                var loc_id = loc.toString().replace(', CO', '').replace(' County', '').replace(' ', '-');
+                var markup = linker.return_markup(loc_type, loc_id);
                 if ( markup !== '' ) {
                     li = document.createElement('li');
                     li.innerHTML = markup;
