@@ -16,8 +16,14 @@ var link_lookup = {
         }
         return true;
     },
+    load_data: function(path) {
+        console.log(path);
+    },
 	init: function(config) {
         if ( config !== null ) this.update_config(config);
+
+        if ( this.config.link_lookup_data !== '' ) this.load_data(this.config.link_lookup_data);
+        else this.load_data('data/test.json');
     }
 };
 
