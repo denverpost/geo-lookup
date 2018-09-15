@@ -1,37 +1,44 @@
 [
   {
-    "location-slug": "all",
+    "location-type": "all",
+    "location-id": "",
     "title": "Governor's race voter's guide",
-    "url-slug": ""
+    "url": "http://www.denverpost.com/"
   },
   {
-    "location-slug": "all",
+    "location-type": "all",
+    "location-id": "",
     "title": "Lt. Governor's race voter's guide",
-    "url-slug": ""
+    "url": "http://www.denverpost.com/"
   },
   {
-    "location-slug": "state-house",
-    "title": "U.S. House District 1 voter's guide",
-    "url-slug": ""
+    "location-type": "state-house",
+    "location-id": 23,
+    "title": "State House District 23 voter's guide",
+    "url": "http://www.denverpost.com/"
   },
   {
-    "location-slug": "state-house",
-    "title": "",
-    "url-slug": ""
+    "location-type": "state-house",
+    "location-id": 39,
+    "title": "State House District 39 voter's guide",
+    "url": "http://www.denverpost.com/"
   },
   {
-    "location-slug": "us-house-colorado",
-    "title": "",
-    "url-slug": ""
+    "location-type": "us-house",
+    "location-id": "congressional-district-2",
+    "title": "U.S. House District 2 voter's guide",
+    "url": "http://www.denverpost.com/"
   },
   {
-    "location-slug": "us-house-colorado",
-    "title": "",
-    "url-slug": ""
+    "location-type": "us-house",
+    "location-id": "congressional-district-3",
+    "title": "U.S. House District 3 voter's guide",
+    "url": "http://www.denverpost.com/"
   },
   {
-    "location-slug": "county",
+    "location-type": "county",
+    "location-id": "adams",
     "title": "Adams County Commissioner",
-    "url-slug": ""
+    "url": "http://www.denverpost.com/"
   }
 ]
