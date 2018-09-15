@@ -19,6 +19,14 @@ var linker = {
     },
     data: {},
     markup: {},
+    return_markup: function(type, id) {
+        // Look in the markup object for a matching type & id,
+        // if there's a match return the <li>'s wrapped in a <ul>.
+        var m = linker.markup;
+        if ( m.hasOwnProperty(type) && m[type].hasOwnProperty(id) ) {
+            return '<ul>' + m[type][id] + '</ul>';
+        }
+    },
     collate: function() {
         // Loop through the data array and build the markup for the links.
         // We put the markup in a nested object that is, at the end here, assigned to linker.markup.
@@ -31,8 +39,8 @@ var linker = {
         var m = {};
         for ( var i = 0; i < l; i ++ ) {
             var r = linker.data[i];
-            if ( !m.hasOwnProperty[r['location-type']] ) m[r['location-type']] = {};
-            if ( !m.hasOwnProperty[r['location-type']][r['location-id']] ) m[r['location-type']][r['location-id']] = '';
+            if ( !m.hasOwnProperty(r['location-type']) ) m[r['location-type']] = {};
+            if ( !m.[r['location-type']].hasOwnProperty(r['location-id']) ) m[r['location-type']][r['location-id']] = '';
 
             if ( r['url'] !== '' ) m[r['location-type']][r['location-id']] += '<li><a href="' + r['url'] + '">' + r['title'] + '</a></li>';
             else m[r['location-type']][r['location-id']] += '<li>' + r['title'] + '</li>';
