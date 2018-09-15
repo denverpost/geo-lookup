@@ -11,7 +11,11 @@ From the www directory, create a symbolic link to the json dir, ala `ln -s ../js
 
 We use http://mapshaper.org/ to simplify geojson files.
 
-### Adding links to the results
+### How to set up a new lookup
+
+Basically: Copy an existing one and change some of the variables.
+
+### Configuring adding links to the results
 
 In the case of voter's guides, you'll want to provide links to the guides for the specific races in the matched jurisdictions. This is how you do that.
 
@@ -76,6 +80,10 @@ To get the unique values of a particular column (assuming you have csvkit instal
 An unclean list of distinct special districts used in elections between 2008 and 2017: http://data.denverpost.com/election/results/district/
 
 U.S. Census Bureau's list of geographic boundaries https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html
+
+### API keys
+
+The geolookup is done via Google's API. Google API keys have limits and costs once you exceed those limits. [More about Google Maps API keys](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
 ## Sources
 
