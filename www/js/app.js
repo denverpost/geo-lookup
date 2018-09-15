@@ -136,6 +136,16 @@ var lookup = {
             li.setAttribute('style', 'color: ' + color + ';');
             lookup.ul.appendChild(li);
             
+            // Look if there are related links to add
+            if ( typeof linker !== 'undefined' ) {
+                var markup = linker.return_markup(loc_type, loc);
+                if ( markup !== '' ) {
+                    li = document.createElement('li');
+                    li.innerHTML = markup;
+                    lookup.ul.appendChild(li);
+                }
+            }
+            
             // PLACE BOUNDARIES: This part of the loop gets the place boundaries 
             var boundaries = lookup.wolfy.layers[k[i]];
             var len = boundaries.length;
