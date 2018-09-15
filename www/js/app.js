@@ -158,7 +158,7 @@ var lookup = {
             // Don't add location types that don't have any results.
             if ( loc === 'Not available' ) continue;
             li.textContent = loc_type + ': ' + loc;
-            li.setAttribute('style', 'color: ' + color + ';');
+            li.setAttribute('style', 'color: ' + color + '; font-weight: bold;');
             lookup.ul.appendChild(li);
             
             // Look if there are related links to add
