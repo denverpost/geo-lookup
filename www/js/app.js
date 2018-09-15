@@ -27,6 +27,7 @@ var linker = {
         if ( m.hasOwnProperty(type) && m[type].hasOwnProperty(id) ) {
             return '<ul>' + m[type][id] + '</ul>';
         }
+        return '';
     },
     collate: function() {
         // Loop through the data array and build the markup for the links.
@@ -144,7 +145,7 @@ var lookup = {
             if ( typeof linker !== 'undefined' ) {
                 // Make the loc value more machine-readable
                 var loc_id = loc.toString().replace(', CO', '').replace(' County', '').replace(' ', '-');
-                var markup = linker.return_markup(loc_type, loc_id);
+                var markup = linker.return_markup(key, loc_id);
                 if ( markup !== '' ) {
                     li = document.createElement('li');
                     li.innerHTML = markup;
