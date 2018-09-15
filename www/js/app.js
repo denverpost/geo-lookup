@@ -26,6 +26,7 @@ var linker = {
         var m = linker.markup;
         id = id.toLowerCase();
         if ( m.hasOwnProperty(type) && m[type].hasOwnProperty(id) ) {
+            if ( type === 'all' && id === 'all' ) return m[type][id];
             return '<ul>' + m[type][id] + '</ul>';
         }
         return '';
