@@ -2,8 +2,9 @@
 // GEO LOOKUP-TO-ARTICLE LINK & TEXT MANAGER OBJECT
 // This lets us, once we get the results for a lookup,
 // append linked text items below each matching boundary.
-var link_lookup = {
+var linker = {
     config: {
+        linker_data: '',
     },
     update_config: function(config) {
         // Take an external config object and update this config object.
@@ -16,14 +17,15 @@ var link_lookup = {
         }
         return true;
     },
-    load_data: function(path) {
+    data: {},
+    callback: function(path) {
         console.log(path);
     },
 	init: function(config) {
         if ( config !== null ) this.update_config(config);
 
-        if ( this.config.link_lookup_data !== '' ) this.load_data(this.config.link_lookup_data);
-        else this.load_data('data/test.json');
+        if ( this.config.linker_data !== '' ) utils.get_json(this.config.linker_data, linker.data, linker.callback);
+        else utils.get_json('data/test.json', linker.data, linker.callback);
     }
 };
 
@@ -286,5 +288,5 @@ var utils = {
 function init_app() {
     m.init(config);
 	lookup.init(config);
-	link_lookup.init(config);
+	linker.init(config);
 }
