@@ -1,0 +1,34 @@
+.hide { visibility: hidden; }
+#locator-map {
+    width: 100%;
+    height: 500px;
+}
+#location-autocomplete {
+    width: 300px;
+}
+#location-field h1 {
+    font-size: 2em;
+}
+#results ul {
+    margin-left: 20px;
+}
+#results ul ul {
+    margin-left: 30px;
+}
+#results li {
+    list-style-type: disc;
+}
+#results li.sublist {
+    list-style-type: none;
+}
+#results li a {
+    text-decoration: underline;
+    color: #003459;
+}
+#results li a:hover {
+    text-decoration: none;
+    color: #8e1024;
+}
+#results li a:visited {
+    color: grey;
+}
