@@ -37,11 +37,13 @@
 	<main>
 		<article>
 			<section id="location-field">
-				<h1>Geo Lookup</h1>
+				<h1>Geo Lookup - Bingerized</h1>
                 <p>This is a fine place to test geo lookups.</p>
 				<h2>Look up an address</h2>
-				<label for="location-autocomplete">Street Address</label>
-				<input placeholder="What's the address?" id="location-autocomplete" onFocus="lookup.geolocate()" type="text"></input>
+				<label for="location-autocomplete">Address</label>
+				<!-- <input placeholder="What's the address?" id="location-autocomplete" onFocus="lookup.geolocate()" type="text"></input> -->
+                <input placehold="Enter Address" id="location-autocomplete" type="text" />
+                <button onclick="lookup.geolocate()">Search</button>
 			</section>
 			<section id="results" class="hide">
 				<h2>Results</h2>
@@ -70,15 +72,19 @@ var config = {
     //linker_data: 'data/2018-general-election.json',
     //border_colors: ['#AA00BB','#FF0000'....],
 };
-
+/*
 function init_autocomplete() {
     lookup.init_autocomplete();
 }
+*/
 </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="js/leaflet/1.3.1/leaflet.js"></script>
 	<script onload="init_app();" src="js/app.js"></script>
-	<script onload="lookup.wolfy = Wherewolf();" src="js/wherewolf.js"></script> 
-    <!-- EDIT: ADD GOOGLE MAPS API KEY HERE -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=KEYGOESHERE&libraries=places&callback=init_autocomplete" async defer></script>
+	<script onload="lookup.wolfy = Wherewolf();" src="js/wherewolf.js"></script>
+    <!--
+        EDIT: ADD GOOGLE MAPS API KEY HERE
+	    <script src="https://maps.googleapis.com/maps/api/js?key=KEYGOESHERE&libraries=places&callback=init_autocomplete" async defer></script>
+	-->
 </body>
 </html>

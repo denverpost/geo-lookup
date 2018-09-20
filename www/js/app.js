@@ -1,3 +1,16 @@
+
+//functions to grab user input
+document.getElementById('location-autocomplete').addEventListener('keypress', function (e) {
+    var key = e.which || e.keyCode;
+    if (key === 13) { // 13 is enter
+        // code for enter
+        lookup.geolocate();
+    }
+});
+
+
+
+
 // LET'S DO THIS
 // GEO LOOKUP-TO-ARTICLE LINK & TEXT MANAGER OBJECT
 // This lets us, once we get the results for a lookup,
@@ -65,7 +78,6 @@ var linker = {
         linker.collate();
     }
 };
-
 // GEO LAT/LONG LOOKUP OBJECT
 var inbox = {};
 var lookup = {
@@ -106,11 +118,36 @@ var lookup = {
           lat: this.config.center_point[0],
           lng: this.config.center_point[1]
         };
+
+        //TODO: clean user data
+        var userLoc = document.getElementById('location-autocomplete').value;
+
+        axios.get('http://dev.virtualearth.net/REST/v1/Locations', {
+            params: {
+                query: userLoc,
+                maxResults: 1,
+                key: 'AvnZ8YGr8wFaqEUiKkwLU_J5M5Vl5yRv8-fl36sy4bgbcZGoHzSTUu12gHyV4-pk'
+            }
+        })
+            .then(function (response) {
+                console.log("win! "+response);
+                lookup.show_results(response);
+            })
+            .catch(function (error) {
+                //TODO: throw error to the user for invalid address
+                console.log("lose " +error);
+            })
+            .then(function () {
+                // always executed
+            });
+        /*
         var circle = new google.maps.Circle({
           center: geolocation,
           radius: 30
         });
         lookup.autocomplete.setBounds(circle.getBounds());
+        */
+
     },
     ul: document.querySelectorAll('#results ul')[0],
     add_marker: function(lat, lon, id, title) {
@@ -118,11 +155,13 @@ var lookup = {
         // add_marker: function (lat, lon, id, title, desc)
         lookup.marker = m.add_marker(lat, lon, id, title);
     },
-    show_results: function() {
+    show_results: function(data) {
+        //TODO: clear old search if they input another address
+        var loc = data;
         // Get the place details from the autocomplete object.
-        place = lookup.autocomplete.getPlace();
-        lat = place.geometry.location.lat();
-        lng = place.geometry.location.lng();
+       // place = lookup.autocomplete.getPlace();
+        lat = loc.data.resourceSets['0'].resources['0'].point['coordinates']['0'];
+        lng = loc.data.resourceSets['0'].resources['0'].point['coordinates']['1'];
         var result = lookup.wolfy.find({lat: lat, lng: lng});
         lookup.add_marker(lat, lng, 'location', '');
         lookup.result = result;
