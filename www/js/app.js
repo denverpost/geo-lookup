@@ -8,8 +8,9 @@ document.getElementById('location-autocomplete').addEventListener('keypress', fu
     }
 });
 
-
-
+var districtLayer = [];
+var marker;
+var searchCheck = false;
 
 // LET'S DO THIS
 // GEO LOOKUP-TO-ARTICLE LINK & TEXT MANAGER OBJECT
@@ -114,14 +115,16 @@ var lookup = {
         lookup.wolfy.add(path, inbox.data);
     },
     geolocate: function() {
+        document.getElementById("addressError").innerHTML = "";
         var geolocation = {
           lat: this.config.center_point[0],
           lng: this.config.center_point[1]
         };
-
-        //TODO: clean user data
-        var userLoc = document.getElementById('location-autocomplete').value;
-
+        function sanitizeString(str){
+            str = str.replace(/[^a-z0-9áéíóúñü \.,_-]/gim,"");
+            return str.trim();
+        }
+        var userLoc = sanitizeString(document.getElementById('location-autocomplete').value);
         axios.get('http://dev.virtualearth.net/REST/v1/Locations', {
             params: {
                 query: userLoc,
@@ -130,12 +133,17 @@ var lookup = {
             }
         })
             .then(function (response) {
-                console.log("win! "+response);
-                lookup.show_results(response);
+               // console.log("win! "+response);
+                var inCO = response.data.resourceSets['0'].resources['0'].address['adminDistrict'];
+                if (inCO != "CO") {
+                    document.getElementById("addressError").innerHTML = "Whoopsie that doesn't appear to be a Colorado address";
+                }else{
+                    lookup.show_results(response);
+                }
             })
             .catch(function (error) {
-                //TODO: throw error to the user for invalid address
-                console.log("lose " +error);
+                document.getElementById("addressError").innerHTML = "Sorry! Something went wrong, please reload the page and try again.";
+                //console.log("lose " +error);
             })
             .then(function () {
                 // always executed
@@ -156,8 +164,12 @@ var lookup = {
         lookup.marker = m.add_marker(lat, lon, id, title);
     },
     show_results: function(data) {
-        //TODO: clear old search if they input another address
+        if (searchCheck === true) {
+            m.map.clearLayers();
+        }
+        searchCheck = true;
         var loc = data;
+
         // Get the place details from the autocomplete object.
        // place = lookup.autocomplete.getPlace();
         lat = loc.data.resourceSets['0'].resources['0'].point['coordinates']['0'];
@@ -183,7 +195,7 @@ var lookup = {
             // PLACE NAMES: This part of the loop gets and writes the place names to the page.
             // The complicated part is the getting of the place name. A lot of the lift in this code
             // is around communicating and organizing the geojson.
-            console.log(k[i]);
+           // console.log(k[i]);
             var key = k[i].replace(lookup.config.path + 'json/' + lookup.config.property + '/simple/', '').replace('.json', '');
             var li = document.createElement('li');
             var loc_type = lookup.config.b[key]['name'];
@@ -216,13 +228,13 @@ var lookup = {
             // PLACE BOUNDARIES: This part of the loop gets the place boundaries 
             var boundaries = lookup.wolfy.layers[k[i]];
             var len = boundaries.length;
-
-            m.boundaries[key] = L.geoJSON().addTo(m.map);
+            m.boundaries[key] = L.geoJSON().addTo(districtLayer);  //m.map original
             for ( var j = 0; j < len; j ++ ) {
+                //m.map.remove(m.boundaries[key]);
                 // If the id value matches the location (var named loc)
                 // we established earlier, we have a match.
                 if ( boundaries[j]['properties'][id_field_name] == loc ) {
-                    console.log(boundaries[j]);
+                    //console.log(boundaries[j]);
                     m.boundaries[key].addData(boundaries[j]).setStyle({ fillColor: color, color: color });
                 }
             }
@@ -231,16 +243,18 @@ var lookup = {
         m.map.fitBounds(m.boundaries['us-house'].getBounds());
         //m.map.setZoom(m.map.getZoom() - 3);
     },
+    /*
     init_autocomplete: function() {
 		// Create the autocomplete object, restricting the search to geographical location types.
 		this.autocomplete = new google.maps.places.Autocomplete(
-			/** @type {!HTMLInputElement} */(document.getElementById('location-autocomplete')),
+			// @type {!HTMLInputElement}
+			(document.getElementById('location-autocomplete')),
 			{types: ['geocode']});
 
 		// When the user selects an address from the dropdown, populate the address
 		// fields in the form.
 		this.autocomplete.addListener('place_changed', lookup.show_results);
-    },
+    },*/
 	init: function(config) {
         if ( config !== null ) this.update_config(config);
 
@@ -271,14 +285,16 @@ var m = {
     },
     map: L.map('locator-map', { minZoom: 6, zoomControl:true, scrollWheelZoom:false }).setView(this.config.center_point, this.config.default_zoom),
     markers: [],
+    districtGroup: [],
     tile: 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png',
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
     add_marker: function(lat, lon, id, title, desc)
     {
-        var marker = L.marker(new L.LatLng(lat, lon)).addTo(this.map);
+        marker = L.marker(new L.LatLng(lat, lon)).addTo(this.map);
         var content = "<h3><a href='#" + id + "'>" + title + "</a></h3><p>" + desc + "</p>";
         marker.bindPopup(content);
         this.markers.push(marker);
+        districtLayer = L.layerGroup().addTo(m.map);
     },
     add_boundary: function(geometry, slug) {
         // Given a geometry object, create a layer and add that boundary to the layer.
@@ -295,7 +311,20 @@ var m = {
             attribution: m.attribution,
             maxZoom: 16
         }).addTo(m.map);
-
+        districtLayer = L.layerGroup().addTo(m.map);
+        L.Map.include({
+            'clearLayers': function () {
+                //remove geoJson layer and marker
+                this.removeLayer(districtLayer);
+                this.removeLayer(marker);
+                /* used to clear all layers including map tiles
+                this.eachLayer(function (layer) {
+                    //console.log(layer);
+                        this.removeLayer(layer);
+                }, this);
+                */
+            }
+        });
         //this.map.fitBounds(this.marker_group);
         //m.map.addLayer(geoLayer);
     }
