@@ -1,7 +1,39 @@
-.hide { visibility: hidden; }
+* {
+    font-family: "Source Serif Pro", Times, Georgia, serif!important;
+}
+a {
+    color:gray;
+    text-decoration:underline;
+}
+a:visited{
+    color:gray;
+}
+a:hover{
+    color:gray;
+    font-size:15px;
+}
+.grid-container{
+    margin-top:20px;
+}
+.button {
+    background: #1779ba;
+    padding: 10px;
+    color: white;
+    cursor:pointer;
+}
+.button:hover{
+    text-decoration-line: underline;
+}
+.hide { opacity:0; }
 #locator-map {
-    width: 100%;
-    height: 500px;
+    height: 300px;
+}
+#resultsList {
+    margin-left:4em;
+    list-style-type:none;
+}
+.sublist {
+    margin-left:1rem;
 }
 #location-autocomplete {
     width: 300px;
@@ -9,26 +41,80 @@
 #location-field h1 {
     font-size: 2em;
 }
-#results ul {
-    margin-left: 20px;
+#results ul{
+    text-align:left;
 }
-#results ul ul {
-    margin-left: 30px;
+
+.text-center {
+    text-align: center;
 }
-#results li {
-    list-style-type: disc;
+.instructions{
+    font-size:18px;
 }
-#results li.sublist {
-    list-style-type: none;
+.input-address{
+    border:1px solid lightgray;
+    width: 100%;
+    height:40px;
+    font-size:18px;
+    color:darkblue;
+    font-weight: bold;
 }
-#results li a {
-    text-decoration: underline;
-    color: #003459;
+.input-address::placeholder{
+    color:gray;
 }
-#results li a:hover {
-    text-decoration: none;
-    color: #8e1024;
+#addressError {
+    background: #ffa5004d;
+    width: 85%;
+    margin: 0 auto 10px auto;
 }
-#results li a:visited {
-    color: grey;
+.stateWideRaces {
+    background-color: #ff29101a;
+    paddingg:10px;
+    text-align:center;
+}
+.localRaces{
+    font-size: 22px;
+    text-align: center;
+    margin-top: 20px;
+}
+.localRaces div{
+    border-top: 2px solid black;
+
+    width: 90%;
+
+    text-align: center;
+
+    display: block;
+
+    margin: 0 auto;
+}
+.startingPosition{
+    position: absolute;
+    right: -300px;
+    opacity:0;
+}
+#endingPosition{
+    right:0;
+}
+
+/* aminations here */
+#locator-map {
+    -webkit-transition: all .1s;
+    -moz-transition: all .1s;
+    -ms-transition: all .1s;
+    -o-transition: all .1s;
+    transition: all .1s;
+}
+#resultsBox, #instructions {
+    opacity:0;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -ms-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+}
+@media screen and (max-width: 39.9375em) {
+    #resultsList{
+        margin-left:0em;
+    }
 }

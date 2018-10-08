@@ -1,0 +1,344 @@
+[
+  {
+    "location-type": "county",
+    "location-id": "jefferson",
+    "title": "Jefferson County Commissioner voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/jefferson-county-commissioner-candidate-questionnaire/"
+  },
+  {
+    "location-type": "county",
+    "location-id": "arapahoe",
+    "title": "Arapahoe County Commissioner voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/arapahoe-county-commissioner-candidate-questionnaire/"
+  },
+  {
+    "location-type": "county",
+    "location-id": "adams",
+    "title": "Adams County Commissioner voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/adams-county-commissioner-candidate-questionnaire/"
+  },
+  {
+    "location-type": "rtd",
+    "location-id": "b",
+    "title": "RTD Director District B voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/rtd-director-district-b-candidate-questionnaire/"
+  },
+  {
+    "location-type": "rtd",
+    "location-id": "c",
+    "title": "RTD Director District C voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/rtd-director-district-c-candidate-questionnaire/"
+  },
+  {
+    "location-type": "rtd",
+    "location-id": "k",
+    "title": "RTD Director District K voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/rtd-director-district-k-candidate-questionnaire/"
+  },
+  {
+    "location-type": "rtd",
+    "location-id": "l",
+    "title": "RTD Director District L voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/rtd-director-district-l-candidate-questionnaire/"
+  },
+  {
+    "location-type": "rtd",
+    "location-id": "n",
+    "title": "RTD Director District N voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/rtd-director-district-n-candidate-questionnaire/"
+  },
+  {
+    "location-type": "rtd",
+    "location-id": "o",
+    "title": "RTD Director District O voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/rtd-director-district-o-candidate-questionnaire/"
+  },
+  {
+    "location-type": "rtd",
+    "location-id": "j",
+    "title": "RTD Director District J voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/rtd-director-district-j-candidate-questionnaire/"
+  },
+  {
+    "location-type": "all",
+    "location-id": "all",
+    "title": "Colorado Secretary of State voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-secretary-of-state-candidate-questionnaire/"
+  },
+  {
+    "location-type": "all",
+    "location-id": "all",
+    "title": "Colorado Treasurer voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-treasurer-candidate-questionnaire/"
+  },
+  {
+    "location-type": "all",
+    "location-id": "all",
+    "title": "Colorado Attorney General voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-attorney-general-candidate-questionnaire/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": 2,
+    "title": "Colorado State Board of Education District 2 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-state-board-of-education-district-2-candidate-questionnaire/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": 4,
+    "title": "Colorado State Board of Education District 4 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-state-board-of-education-district-4-candidate-questionnaire/"
+  },
+  {
+    "location-type": "all",
+    "location-id": "all",
+    "title": "CU Regent At-Large voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/cu-regent-at-large-candidate-questionnaire/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": 3,
+    "title": "CU Regent District 3 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/university-of-colorado-regent-district-3-candidate-questionnaire/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": 5,
+    "title": "CU Regent District 5 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/university-of-colorado-regent-district-5-candidate-questionnaire/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": 1,
+    "title": "U.S. House District 1 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/us-house-district-1-candidate-questionnaire/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": 2,
+    "title": "U.S. House District 2 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/us-house-district-2-candidate-questionnaire/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": 3,
+    "title": "U.S. House District 3 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/us-house-district-3-candidate-questionnaire/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": 5,
+    "title": "U.S. House District 5 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/us-house-district-5-candidate-questionnaire/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": 6,
+    "title": "U.S. House District 6 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/us-house-district-6-candidate-questionnaire/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": 7,
+    "title": "U.S. House District 7 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/us-house-district-7-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 2,
+    "title": "Colorado Senate District 2 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-2-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 3,
+    "title": "Colorado Senate District 3 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-3-candidate-qa/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 5,
+    "title": "Colorado Senate District 5 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-5-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 9,
+    "title": "Colorado Senate District 9 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-9-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 11,
+    "title": "Colorado Senate District 11 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-11-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 15,
+    "title": "Colorado Senate District 15 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-15-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 16,
+    "title": "Colorado Senate District 16 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-16-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 20,
+    "title": "Colorado Senate District 20 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-20-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 22,
+    "title": "Colorado Senate District 22 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-22-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 24,
+    "title": "Colorado Senate District 24 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-24-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 30,
+    "title": "Colorado Senate District 30 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-30-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 32,
+    "title": "Colorado Senate District 32 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-32-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 34,
+    "title": "Colorado Senate District 34 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-34-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 1,
+    "title": "Colorado House District 1 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-1-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 3,
+    "title": "Colorado House District 3 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-3-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 4,
+    "title": "Colorado House District 4 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-4-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 5,
+    "title": "Colorado House District 5 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-5-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 6,
+    "title": "Colorado House District 6 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-6-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 9,
+    "title": "Colorado House District 9 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-9-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 10,
+    "title": "Colorado House District 10 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-10-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 11,
+    "title": "Colorado House District 11 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-11-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 12,
+    "title": "Colorado House District 12 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-12-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 15,
+    "title": "Colorado House District 15 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-15-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 16,
+    "title": "Colorado House District 16 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-16-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 18,
+    "title": "Colorado House District 18 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-18-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 19,
+    "title": "Colorado House District 19 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-19-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 20,
+    "title": "Colorado House District 20 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-20-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 21,
+    "title": "Colorado House District 21 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-21-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 22,
+    "title": "Colorado House District 22 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-22-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 23,
+    "title": "Colorado House District 23 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-23-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 24,
+    "title": "Colorado House District 24 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-24-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 25,
+    "title": "Colorado House District 25 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-25-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 26,
+    "title": "Colorado House District 26 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-26-candidate-questionnaire/"
+  }
+]

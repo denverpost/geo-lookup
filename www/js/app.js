@@ -40,7 +40,7 @@ var linker = {
         var m = linker.markup;
         id = id.toLowerCase();
         if ( m.hasOwnProperty(type) && m[type].hasOwnProperty(id) ) {
-            if ( type === 'all' && id === 'all' ) return m[type][id];
+            if ( type === 'all' && id === 'all' ) return '<div class="stateWideRaces"> State Wide Races<br/>'+m[type][id]+'</div>';
             return '<ul>' + m[type][id] + '</ul>';
         }
         return '';
@@ -75,7 +75,7 @@ var linker = {
         if ( config !== null ) this.update_config(config);
 
         if ( this.config.linker_data !== '' ) utils.get_json(this.config.path + this.config.linker_data, linker, linker.collate);
-        else utils.get_json(this.config.path + 'data/test.json', linker, linker.collate);
+        else utils.get_json(this.config.path + 'data/guide.json', linker, linker.collate);
         linker.collate();
     }
 };
@@ -125,7 +125,7 @@ var lookup = {
             return str.trim();
         }
         var userLoc = sanitizeString(document.getElementById('location-autocomplete').value);
-        axios.get('http://dev.virtualearth.net/REST/v1/Locations', {
+        axios.get('https://dev.virtualearth.net/REST/v1/Locations', {
             params: {
                 query: userLoc,
                 maxResults: 1,
@@ -158,17 +158,22 @@ var lookup = {
 
     },
     ul: document.querySelectorAll('#results ul')[0],
+
+    resultsHTML: document.getElementById('#resultsBox') ,
     add_marker: function(lat, lon, id, title) {
         // A wrapper for the map object's add marker.
         // add_marker: function (lat, lon, id, title, desc)
         lookup.marker = m.add_marker(lat, lon, id, title);
     },
     show_results: function(data) {
+        console.log('showing results function');
         if (searchCheck === true) {
             m.map.clearLayers();
         }
         searchCheck = true;
         var loc = data;
+
+
 
         // Get the place details from the autocomplete object.
        // place = lookup.autocomplete.getPlace();
@@ -177,10 +182,7 @@ var lookup = {
         var result = lookup.wolfy.find({lat: lat, lng: lng});
         lookup.add_marker(lat, lng, 'location', '');
         lookup.result = result;
-        // Make the results visible.
-        document.getElementById('results').classList.remove('hide');
 
-        
         // Write the results to the page: the list and the map.
         // To map them we'll need to go back to the lookup.wolfy object to get the boundaries.
         //
@@ -189,8 +191,20 @@ var lookup = {
         var markup = linker.return_special_links('all');
         if ( markup !== '' ) lookup.ul.innerHTML = markup;
 
+
+
         var k = Object.keys(result);
+
+        console.log(k);
+
         m.boundaries = {};
+
+        document.getElementById('locator-map').classList.remove('medium-offset-3');
+        document.getElementById('resultsBox').setAttribute('style','opacity:1;');
+        //insert title before looping through non-all locations....
+        // ...locations labeled all have already been placed inside the lookup.ul
+        lookup.ul.insertAdjacentHTML('beforeend', '<div class="localRaces"><div></div>Races specific to your address:</div>');
+
         for ( var i = 0; i < k.length; i ++ ) {
             // PLACE NAMES: This part of the loop gets and writes the place names to the page.
             // The complicated part is the getting of the place name. A lot of the lift in this code
@@ -209,17 +223,21 @@ var lookup = {
             // Don't add location types that don't have any results.
             if ( loc === 'Not available' ) continue;
             li.textContent = loc_type + ': ' + loc;
-            li.setAttribute('style', 'color: ' + color + '; font-weight: bold;');
+            // used to make links match map color if so desired
+            li.insertAdjacentHTML('afterbegin', '<span style="background:'+color+';padding:3px;margin-right:4px;"></span>');
+            // li.setAttribute('style', 'color: ' + color + '; font-weight: bold;');
+            li.setAttribute('style','color:black;margin-bottom:5px;');
             lookup.ul.appendChild(li);
-            
+
             // Look if there are related links to add
             // Make the loc value more machine-readable
             var loc_id = loc.toString().replace(', CO', '').replace(' County', '').replace(' ', '-');
             // Look for any special, all-marked links.
             var markup = linker.return_special_links(key);
             markup += linker.return_markup(key, loc_id);
+
             if ( markup !== '' ) {
-                li = document.createElement('li');
+                li = document.createElement('div');
                 li.setAttribute('class', 'sublist');
                 li.innerHTML = markup;
                 lookup.ul.appendChild(li);
