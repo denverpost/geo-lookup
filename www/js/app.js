@@ -39,7 +39,9 @@ var linker = {
         // if there's a match return the <li>'s wrapped in a <ul>.
         var m = linker.markup;
         id = id.toLowerCase();
+        console.log(linker.markup);
         if ( m.hasOwnProperty(type) && m[type].hasOwnProperty(id) ) {
+            if ( type === "city") return;
             if ( type === 'all' && id === 'all' ) return '<div class="stateWideRaces"> State Wide Races<br/>'+m[type][id]+'</div>';
             return '<ul>' + m[type][id] + '</ul>';
         }
@@ -195,8 +197,6 @@ var lookup = {
 
         var k = Object.keys(result);
 
-        console.log(k);
-
         m.boundaries = {};
 
         document.getElementById('locator-map').classList.remove('medium-offset-3');
@@ -215,6 +215,7 @@ var lookup = {
             var loc_type = lookup.config.b[key]['name'];
             // “result[k[i]][lookup.config.b[key]['id']]” is an intense array key collation operation
             var id_field_name = lookup.config.b[key]['id'];
+            console.log(id_field_name+" inside create links loop");
             var color = lookup.config.border_colors[i];
 
             var loc = 'Not available';
@@ -222,38 +223,44 @@ var lookup = {
             
             // Don't add location types that don't have any results.
             if ( loc === 'Not available' ) continue;
-            li.textContent = loc_type + ': ' + loc;
-            // used to make links match map color if so desired
-            li.insertAdjacentHTML('afterbegin', '<span style="background:'+color+';padding:3px;margin-right:4px;"></span>');
-            // li.setAttribute('style', 'color: ' + color + '; font-weight: bold;');
-            li.setAttribute('style','color:black;margin-bottom:5px;');
-            lookup.ul.appendChild(li);
+            console.log ("loc type is "+loc_type);
+            if ( loc_type === "City" || loc_type === "RTD district" && loc === 'G') {
+                //do nothing
 
-            // Look if there are related links to add
-            // Make the loc value more machine-readable
-            var loc_id = loc.toString().replace(', CO', '').replace(' County', '').replace(' ', '-');
-            // Look for any special, all-marked links.
-            var markup = linker.return_special_links(key);
-            markup += linker.return_markup(key, loc_id);
-
-            if ( markup !== '' ) {
-                li = document.createElement('div');
-                li.setAttribute('class', 'sublist');
-                li.innerHTML = markup;
+            }else {
+                li.textContent = loc_type + ': ' + loc;
+                // used to make links match map color if so desired
+                li.insertAdjacentHTML('afterbegin', '<span style="background:' + color + ';padding:3px;margin-right:4px;"></span>');
+                // li.setAttribute('style', 'color: ' + color + '; font-weight: bold;');
+                li.setAttribute('style', 'color:black;margin-bottom:5px;');
                 lookup.ul.appendChild(li);
-            }
-            
-            // PLACE BOUNDARIES: This part of the loop gets the place boundaries 
-            var boundaries = lookup.wolfy.layers[k[i]];
-            var len = boundaries.length;
-            m.boundaries[key] = L.geoJSON().addTo(districtLayer);  //m.map original
-            for ( var j = 0; j < len; j ++ ) {
-                //m.map.remove(m.boundaries[key]);
-                // If the id value matches the location (var named loc)
-                // we established earlier, we have a match.
-                if ( boundaries[j]['properties'][id_field_name] == loc ) {
-                    //console.log(boundaries[j]);
-                    m.boundaries[key].addData(boundaries[j]).setStyle({ fillColor: color, color: color });
+
+                // Look if there are related links to add
+                // Make the loc value more machine-readable
+                var loc_id = loc.toString().replace(', CO', '').replace(' County', '').replace('Congressional District', '').replace(' ', '');
+                // Look for any special, all-marked links.
+                var markup = linker.return_special_links(key);
+                markup += linker.return_markup(key, loc_id);
+
+                if (markup !== '') {
+                    li = document.createElement('div');
+                    li.setAttribute('class', 'sublist');
+                    li.innerHTML = markup;
+                    lookup.ul.appendChild(li);
+                }
+
+                // PLACE BOUNDARIES: This part of the loop gets the place boundaries
+                var boundaries = lookup.wolfy.layers[k[i]];
+                var len = boundaries.length;
+                m.boundaries[key] = L.geoJSON().addTo(districtLayer);  //m.map original
+                for (var j = 0; j < len; j++) {
+                    //m.map.remove(m.boundaries[key]);
+                    // If the id value matches the location (var named loc)
+                    // we established earlier, we have a match.
+                    if (boundaries[j]['properties'][id_field_name] == loc) {
+                        //console.log(boundaries[j]);
+                        m.boundaries[key].addData(boundaries[j]).setStyle({fillColor: color, color: color});
+                    }
                 }
             }
         }
