@@ -42,6 +42,7 @@ var linker = {
         console.log(linker.markup);
         if ( m.hasOwnProperty(type) && m[type].hasOwnProperty(id) ) {
             if ( type === "city") return;
+            console.log (type + " id="+id);
             if ( type === 'all' && id === 'all' ) return '<div class="stateWideRaces"><div id="statewide">Statewide Races</div>'+m[type][id]+'</div>';
             return '<ul>' + m[type][id] + '</ul>';
         }
@@ -69,6 +70,7 @@ var linker = {
             if ( !m[type].hasOwnProperty(id) ) m[type][id] = '';
 
             if ( r['url'] == '#' ) m[type][id] += '<li>' + r['title'] + '</li>';
+
             else if ( r['url'] !== '' ) m[type][id] += '<li><a href="' + r['url'] + '" target="_blank">' + r['title'] + '</a></li>';
             else m[type][id] += '<li>' + r['title'] + '</li>';
         }
@@ -98,7 +100,8 @@ var lookup = {
             '#BE00FF',
             '#306A00',
             '#6A0020',
-            '#01384A'
+            '#01384A',
+            '#FFBE00'
         ],
         path: '',
     },
@@ -224,12 +227,16 @@ var lookup = {
             
             // Don't add location types that don't have any results.
             if ( loc === 'Not available' ) continue;
-            console.log ("loc type is "+loc_type);
-            if ( loc_type === "City" || loc_type === "RTD district" && loc === 'G') {
+            console.log ("loc type is "+loc_type+"and loc is "+loc);
+            if ( loc_type === "City" || loc_type === "RTD District" && loc === 'G' || loc_type === "State Board of Education" && loc != 'Congressional District 4' && loc != 'Congressional District 2') {
                 //do nothing
-
             }else {
-                li.textContent = loc_type + ': ' + loc;
+                if (loc_type === "State Board of Education") {
+                    edu_loc = loc.replace('Congressional', '').replace(' ', '');
+                    li.textContent = loc_type + ': ' + edu_loc;
+                }else {
+                    li.textContent = loc_type + ': ' + loc;
+                }
                 // used to make links match map color if so desired
                 li.insertAdjacentHTML('afterbegin', '<span style="background:' + color + ';padding:3px;margin-right:4px;"></span>');
                 // li.setAttribute('style', 'color: ' + color + '; font-weight: bold;');

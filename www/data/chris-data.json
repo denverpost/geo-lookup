@@ -1,0 +1,38 @@
+[
+  {
+    "location-type": "us-house",
+    "location-id": 4,
+    "title": "U.S. House District 7 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/us-house-district-7-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 30,
+    "title": "Colorado Senate District 20 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-senate-district-20-candidate-questionnaire/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 44,
+    "title": "Colorado House District 33 voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/colorado-house-district-33-candidate-questionnaire/"
+  },
+  {
+    "location-type": "county",
+    "location-id": "douglas",
+    "title": "Adams County Commissioner voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/adams-county-commissioner-candidate-questionnaire/"
+  },
+  {
+    "location-type": "rtd",
+    "location-id": "G",
+    "title": "RTD Director District L voter guide",
+    "url": "https://www.denverpost.com/2018/10/10/rtd-director-district-l-candidate-questionnaire/"
+  },
+  {
+    "location-type": "education",
+    "location-id": 4,
+    "title": "Education Board of Directors",
+    "url": "https://www.google.com"
+  }
+]

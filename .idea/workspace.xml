@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="add0cf04-781c-47f1-b10e-7069e83757d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/data/guide.json" beforeDir="false" afterPath="$PROJECT_DIR$/www/data/guide.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/app.js" afterDir="false" />
@@ -18,11 +16,11 @@
     <session id="358963508">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.0" value="4" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.0" value="5" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -44,15 +42,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="1982" />
-          <entry key="html" value="2439" />
-          <entry key="js" value="4174" />
+          <entry key="html" value="2526" />
+          <entry key="js" value="4483" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="1982" />
-          <entry key="HTML" value="2439" />
-          <entry key="JavaScript" value="4174" />
+          <entry key="HTML" value="2526" />
+          <entry key="JavaScript" value="4483" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class" />
@@ -72,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="157" column="11" lean-forward="true" selection-start-line="157" selection-start-column="11" selection-end-line="157" selection-end-column="11" />
+            <state relative-caret-position="-2214">
+              <caret line="235" column="63" lean-forward="true" selection-start-line="235" selection-start-column="63" selection-end-line="235" selection-end-column="63" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
                 <element signature="e#0#6#0" expanded="true" />
@@ -86,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="63" column="22" lean-forward="true" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+            <state relative-caret-position="50">
+              <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -96,9 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>m[type]</find>
-      <find>namelsad</find>
-      <find>return_markup</find>
       <find>chris</find>
       <find>loc_type</find>
       <find>locato</find>
@@ -126,6 +121,9 @@
       <find>results</find>
       <find>Sorry! Something went wrong, please reload the page and try again.</find>
       <find>whoop</find>
+      <find>guide.</find>
+      <find>education</find>
+      <find>educa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,17 +151,16 @@
     <servers />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="829" />
-    <option name="y" value="211" />
-    <option name="width" value="1621" />
-    <option name="height" value="1374" />
+    <option name="x" value="277" />
+    <option name="y" value="158" />
+    <option name="width" value="1924" />
+    <option name="height" value="1377" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -186,6 +183,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -234,11 +232,12 @@
       <workItem from="1538148375820" duration="7177000" />
       <workItem from="1539030015242" duration="6190000" />
       <workItem from="1539121488900" duration="11059000" />
+      <workItem from="1539189719275" duration="2597000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56229000" />
+    <option name="totallyTimeSpent" value="58826000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -250,10 +249,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="829" y="211" width="1621" height="1374" extended-state="0" />
+    <frame x="277" y="158" width="1924" height="1377" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.24635845" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992928" visible="true" weight="0.20935175" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5007072" side_tool="true" weight="0.27752978" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -336,8 +335,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="157" column="11" lean-forward="true" selection-start-line="157" selection-start-column="11" selection-end-line="157" selection-end-column="11" />
+        <state relative-caret-position="-2214">
+          <caret line="235" column="63" lean-forward="true" selection-start-line="235" selection-start-column="63" selection-end-line="235" selection-end-column="63" />
           <folding>
             <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
             <element signature="e#0#6#0" expanded="true" />
@@ -348,8 +347,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="63" column="22" lean-forward="true" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="22" />
+        <state relative-caret-position="50">
+          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
         </state>
       </provider>
     </entry>
