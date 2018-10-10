@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title></title>
+    <link rel="icon" type="image/png" href="">
+    <!-- DEFAULT -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="">
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="" />
+
+    <!-- KEYWORD -->
+    <meta name="keywords" content="" />
+
+    <!-- LINK -->
+    <link rel="canonical" href="">
+    <meta property="og:url" content="" />
+    <meta name="twitter:url" content="" />
+
+    <!-- NO NEED TO EDIT -->
+    <meta name="localeCountry" content="US"/>
+    <meta name="localeLanguage" content="en" />
+
+    <link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../js/leaflet/1.3.1/leaflet.css">
+    <link rel="stylesheet" href="//assets.digitalfirstmedia.com/prod/static/css/denverpost.css?ver=1.0">
+    <link rel="stylesheet" id="mason-fonts-css"  href="//fonts.googleapis.com/css?family=Source+Serif+Pro%3A400%2C400italic%2C600%2C600italic%2C700%2C700italic%7CSource+Sans+Pro%3A400%2C400italic%2C600%2C600italic%2C700%2C400italic&#038;ver=4.6" media="all">
+
+</head>
+<body>
+
+<!-- CONTENT-START -->
+	<main>
+		<article>
+			<section id="location-field">
+				<h1>Find your elections</h1>
+				<label for="location-autocomplete">Street Address</label>
+				<input placeholder="What's the address?" id="location-autocomplete" onFocus="lookup.geolocate()" type="text"></input>
+			</section>
+			<section id="results" class="hide">
+				<h2>Results</h2>
+				<ul></ul>
+                <div id="locator-map"></div>
+			</section>
+		</article>
+	</main>
+<!-- CONTENT-END -->
+
+<script>
+var config = {
+    center_point: [39,-105],
+    default_zoom: 7,
+    property: 'denverpost',
+    simple: 0,
+	boundaries: ['us-house', 'state-senate', 'state-house', 'city', 'county', 'rtd'],
+	b: {
+        'us-house': { name: 'U.S. House', id: 'namelsad' },
+        'state-senate': { name: 'State senate district', id: 'district' },
+        'state-house': { name: 'State house district', id: 'district' },
+        'city': { name: 'City', id: 'name' },
+        'county': { name: 'County', id: 'name' },
+        'rtd': { name: 'RTD district', id: 'DISTRICT' },
+    },
+    //linker_data: 'data/2018-general-election.json',
+    border_colors: [
+        '#250059',
+        '#590034',
+        '#592500',
+        '#345900',
+        '#005925',
+        '#003459'],
+    path: '../',
+};
+
+function init_autocomplete() {
+    lookup.init_autocomplete();
+}
+</script>
+	<script src="../js/leaflet/1.3.1/leaflet.js"></script>
+	<script onload="init_app();" src="../js/app.js"></script>
+	<script onload="lookup.wolfy = Wherewolf();" src="../js/wherewolf.js"></script> 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZY9Pwt0xF8w-eObP9aav0unsg3d6zRk8&libraries=places&callback=init_autocomplete" async defer></script>
+</body>
+</html>

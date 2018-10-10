@@ -25,15 +25,24 @@ a:hover{
 }
 .hide { opacity:0; }
 #locator-map {
-    height: 300px;
-    border: 2px solid lightgray;
+    height: 310px;
+    border: 2px solid gray;
+}
+#resultsBoxIntro{
+    text-align: center;
+    margin-top: 110px;
+    color: gray;
 }
 #resultsList {
     margin-left:4em;
     list-style-type:none;
-    background: #f8efd4;
     padding: 20px;
     border-radius: 10px;
+    border: 2px solid lightgray;
+    margin-left:20px;
+    margin-top:40px;
+    min-height:280px;
+    width:80%;
 }
 .sublist {
     margin-left:1rem;
@@ -43,6 +52,12 @@ a:hover{
 }
 #location-field h1 {
     font-size: 2em;
+}
+.racesHeadline{
+    text-align:center;
+    font-size:34px;
+    margin-top: 140px;
+    line-height: 34px;
 }
 #results ul{
     text-align:left;
@@ -57,6 +72,7 @@ a:hover{
     padding: 20px;
     display: block;
     margin: 0 auto;
+    margin-bottom:20px;
     background: white;
 }
 .input-address{
@@ -64,8 +80,9 @@ a:hover{
     width: 100%;
     height:40px;
     font-size:18px;
-    color:darkblue;
     font-weight: bold;
+    border-radius: 20px;
+    text-indent: 10px;
 }
 .input-address::placeholder{
     color:gray;
@@ -107,12 +124,22 @@ a:hover{
     right: -300px;
     opacity:0;
 }
+.stateWideRacesBox{
+    text-align:center;
+    background-color: #eae9e9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.stateWideRacesBox p{
+    margin-bottom:0px;
+}
 #endingPosition{
     right:0;
 }
-#location-field
+.ballotBox
 {
     position: relative;
+    min-height: 580px;
     padding: 50px;
     margin: 0 auto;
     background-color: #fff;
@@ -120,7 +147,7 @@ a:hover{
     -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
-#location-field:before, #location-field:after
+.ballotBox:before, .ballotBox:after
 {
     position: absolute;
     width: 40%;
@@ -140,7 +167,7 @@ a:hover{
     z-index: -1;
 }
 
-#location-field:after
+.ballotBox:after
 {
     left: auto;
     right: 12px;
@@ -158,16 +185,16 @@ a:hover{
     -ms-transition: all .1s;
     -o-transition: all .1s;
     transition: all .1s;
-    border:2px solid gray;
 }
-#resultsBox, #instructions {
-    opacity:0;
+/*
+#resultsBox, #instructions, resultsBoxIntro {
     -webkit-transition: all 2s;
     -moz-transition: all 2s;
     -ms-transition: all 2s;
     -o-transition: all 2s;
     transition: all 2s;
 }
+*/
 @media screen and (max-width: 39.9375em) {
     #resultsList{
         margin-left:0em;
@@ -182,6 +209,12 @@ a:hover{
         margin-top:30px;
     }
     #location-autocomplete {
+        width:100%;
+    }
+    .racesHeadline{
+        margin-top:30px;
+    }
+    #resultsList {
         width:100%;
     }
 }

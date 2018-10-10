@@ -39,10 +39,10 @@ var linker = {
         // if there's a match return the <li>'s wrapped in a <ul>.
         var m = linker.markup;
         id = id.toLowerCase();
-        console.log(linker.markup);
         if ( m.hasOwnProperty(type) && m[type].hasOwnProperty(id) ) {
             if ( type === "city") return;
-            if ( type === 'all' && id === 'all' ) return '<div class="stateWideRaces"><div id="statewide">Statewide Races</div>'+m[type][id]+'</div>';
+            if ( type === 'all' && id === 'all' ) return '';
+           // if ( type === 'all' && id === 'all' ) return '<div class="stateWideRaces"><div id="statewide">Statewide Races</div>'+m[type][id]+'</div>';
             return '<ul>' + m[type][id] + '</ul>';
         }
         return '';
@@ -139,8 +139,9 @@ var lookup = {
                // console.log("win! "+response);
                 var inCO = response.data.resourceSets['0'].resources['0'].address['adminDistrict'];
                 if (inCO != "CO") {
-                    document.getElementById("addressError").innerHTML = "Hmmmm, that doesn't appear to be a Colorado address";
+                    document.getElementById("addressError").innerHTML = "Hmmm, that doesn't appear to be a Colorado address";
                 }else{
+                    //document.getElementById("resultsList").innerHTML = "aaaa";
                     lookup.show_results(response);
                 }
             })
@@ -162,7 +163,7 @@ var lookup = {
     },
     ul: document.querySelectorAll('#results ul')[0],
 
-    resultsHTML: document.getElementById('#resultsBox') ,
+    resultsHTML: document.getElementById('#results') ,
     add_marker: function(lat, lon, id, title) {
         // A wrapper for the map object's add marker.
         // add_marker: function (lat, lon, id, title, desc)
@@ -170,6 +171,7 @@ var lookup = {
     },
     show_results: function(data) {
         console.log('showing results function');
+
         if (searchCheck === true) {
             m.map.clearLayers();
         }
@@ -200,11 +202,10 @@ var lookup = {
 
         m.boundaries = {};
 
-        document.getElementById('locator-map').classList.remove('medium-offset-3');
-        document.getElementById('resultsBox').setAttribute('style','opacity:1;');
+        document.getElementById('resultsBoxIntro').setAttribute('style','display:none;');
         //insert title before looping through non-all locations....
         // ...locations labeled all have already been placed inside the lookup.ul
-        lookup.ul.insertAdjacentHTML('beforeend', '<div class="localRaces"><div></div>Races specific to your address:</div>');
+        //lookup.ul.insertAdjacentHTML('beforeend', '<div class="localRaces"><div></div>Races specific to your address:</div>');
 
         for ( var i = 0; i < k.length; i ++ ) {
             // PLACE NAMES: This part of the loop gets and writes the place names to the page.
@@ -216,7 +217,6 @@ var lookup = {
             var loc_type = lookup.config.b[key]['name'];
             // “result[k[i]][lookup.config.b[key]['id']]” is an intense array key collation operation
             var id_field_name = lookup.config.b[key]['id'];
-            console.log(id_field_name+" inside create links loop");
             var color = lookup.config.border_colors[i];
 
             var loc = 'Not available';
@@ -224,7 +224,6 @@ var lookup = {
             
             // Don't add location types that don't have any results.
             if ( loc === 'Not available' ) continue;
-            console.log ("loc type is "+loc_type);
             if ( loc_type === "City" || loc_type === "RTD district" && loc === 'G') {
                 //do nothing
 

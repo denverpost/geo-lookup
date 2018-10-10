@@ -1,0 +1,314 @@
+[
+  {
+    "location-type": "all",
+    "location-id": "all",
+    "title": "Governor's race voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "all",
+    "location-id": "all",
+    "title": "Lt. Governor's race voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": 23,
+    "title": "State Senate District 23 voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-senate",
+    "location-id": "all",
+    "title": "State Senate voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": "congressional-district-2",
+    "title": "U.S. House District 2 voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "us-house",
+    "location-id": "congressional-district-3",
+    "title": "U.S. House District 3 voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "county",
+    "location-id": "adams",
+    "title": "Adams County Commissioner",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 1,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 2,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 3,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 4,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 5,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 6,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 7,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 8,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 9,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 10,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 11,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 12,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 13,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 14,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 15,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 16,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 17,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 18,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 19,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 20,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 21,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 22,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 23,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 24,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 25,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 26,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 27,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 28,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 29,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 30,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 31,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 32,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 33,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 34,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 35,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 36,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 37,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 38,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 39,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 40,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 41,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 42,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 43,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 44,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  },
+  {
+    "location-type": "state-house",
+    "location-id": 45,
+    "title": "State House District voter's guide",
+    "url": "http://www.denverpost.com/"
+  }
+]
