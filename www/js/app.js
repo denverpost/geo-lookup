@@ -5,6 +5,7 @@ document.getElementById('location-autocomplete').addEventListener('keypress', fu
     if (key === 13) { // 13 is enter
         // code for enter
         lookup.geolocate();
+        document.getElementById("location-autocomplete").blur();
     }
 });
 
@@ -121,6 +122,7 @@ var lookup = {
         lookup.wolfy.add(path, inbox.data);
     },
     geolocate: function() {
+        document.getElementById("location-autocomplete").blur();
         document.getElementById("addressError").innerHTML = "";
         var geolocation = {
           lat: this.config.center_point[0],
